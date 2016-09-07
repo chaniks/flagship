@@ -1,5 +1,13 @@
 require "flagship/version"
 
 module Flagship
-  # Your code goes here...
+  module ArrayIdioms
+    def unique?
+      self == self.uniq
+    end
+  end
+
+  def self.expand
+    Array.prepend ArrayIdioms
+  end
 end
