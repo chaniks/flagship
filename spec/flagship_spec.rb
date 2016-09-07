@@ -9,4 +9,8 @@ describe Flagship do
   it 'should define Array#unique?' do
     [].should respond_to(:unique?)
   end
+
+  it "should define Object#in?" do
+    Object.new.should respond_to(:in?)
+  end
 end
