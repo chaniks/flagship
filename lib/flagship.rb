@@ -6,8 +6,5 @@ module Flagship
       self == self.uniq
     end
   end
-
-  def self.expand
-    Array.prepend ArrayIdioms
-  end
+  Array.prepend ArrayIdioms
 end

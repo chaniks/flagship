@@ -6,10 +6,6 @@ describe Flagship do
     expect(Flagship::VERSION).not_to be nil
   end
 
-  before(:context) do
-    Flagship.expand
-  end
-
   it 'should define Array#unique?' do
     [].should respond_to(:unique?)
   end
