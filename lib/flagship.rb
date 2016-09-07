@@ -1,5 +1,9 @@
 require "flagship/version"
 
+require 'flagship/array'
+require 'flagship/object'
+
 module Flagship
-  # Your code goes here...
+  ::Array.prepend ArrayIdioms
+  ::Object.prepend ObjectUtils
 end
