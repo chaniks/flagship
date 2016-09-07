@@ -6,5 +6,5 @@ module Flagship
       self == self.uniq
     end
   end
-  Array.prepend ArrayIdioms
+  ::Array.prepend ArrayIdioms
 end
