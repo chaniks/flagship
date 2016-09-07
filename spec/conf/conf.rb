@@ -15,3 +15,9 @@ RSpec.configure do |conf|
   conf.expect_with(:rspec)  { |c| c.syntax = [:should, :expect] }
   conf.mock_with(:rspec)    { |c| c.syntax = [:should, :expect] }
 end
+
+# I want my Flagship test to be tested first for documentation purpose
+RSpec.configure do |conf|
+  conf.exclude_pattern = "spec/flagship_spec.rb"
+  require "flagship_spec"
+end
