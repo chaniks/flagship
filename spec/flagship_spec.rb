@@ -6,11 +6,11 @@ describe Flagship do
     expect(Flagship::VERSION).not_to be nil
   end
 
-  it 'should define Array#unique?' do
+  it 'defines Array#unique?' do
     [].should respond_to(:unique?)
   end
 
-  it "should define Object#in?" do
+  it "defines Object#in?" do
     Object.new.should respond_to(:in?)
   end
 end
