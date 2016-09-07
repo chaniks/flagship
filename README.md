@@ -23,7 +23,9 @@ Or install it yourself as:
 ```ruby
 require 'flagship'
 
-[1,2,3,4,5].unique?  # => true
+[1,2,3,4,5].unique?     # => true
+"a".in? ["a","b","c"]   # => true
+"a.txt".in_files? ["./a.txt", "./b.txt", "./c.txt"]   # => true
 ```
 
 ## Development
