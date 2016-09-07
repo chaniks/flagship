@@ -21,3 +21,12 @@ RSpec.configure do |conf|
   conf.exclude_pattern = "spec/flagship_spec.rb"
   require "flagship_spec"
 end
+
+# I want to suppress Pending notifications from RSpec
+#   it is flood of information
+require 'rspec/core/formatters/base_text_formatter'
+module SuppressPendingMessage
+  def dump_pending(arg)
+  end
+end
+RSpec::Core::Formatters::BaseTextFormatter.prepend SuppressPendingMessage
