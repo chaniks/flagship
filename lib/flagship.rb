@@ -10,6 +10,7 @@ module Flagship
   ::Object.prepend ObjectUtils
   ::File.prepend FileUtils
   ::String.prepend FileUtils
+  ::File.prepend XPathSupport
 end
 
 include Flagship::DSL::With

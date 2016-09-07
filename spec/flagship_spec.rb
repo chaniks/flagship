@@ -28,4 +28,10 @@ describe Flagship do
   it 'defines #with as DSL' do
     self.should respond_to(:with)
   end
+
+  it 'defines File#xpath' do
+    File.open(__FILE__) do |f|
+      f.should respond_to(:xpath)
+    end
+  end
 end

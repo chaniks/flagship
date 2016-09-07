@@ -31,6 +31,10 @@ foo = 'foo'
 with(foo) do
   nil
 end                     # => 'foo'
+
+File.open('data.xml') do |file|
+  first_book = file.xpath('/bookstore/book').first    # => <book>Programming Ruby</book>
+end
 ```
 
 ## Development
