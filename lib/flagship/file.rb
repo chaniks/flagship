@@ -24,12 +24,23 @@ module Flagship
     private_class_method :with
 
     def self.node2str(node)
-      REXML::Attribute === node ? attr2str(node) : node.to_s
+      case(node)
+      when REXML::Attribute then attr2str(node)
+      when REXML::Element   then elem2str(node)
+      else                       elem2str(node)
+      end
     end
 
     def self.attr2str(attr)
-      with(attr.to_string) do |str|
-        str.define_singleton_method(:value) { attr.to_s }
+      with(attr.to_s) do |str|
+        str.define_singleton_method(:to_xml) { attr.to_string }
+        str.define_singleton_method(:attr_name) { attr.name }
+      end
+    end
+
+    def self.elem2str(elem)
+      with(elem.to_s) do |str|
+        str.define_singleton_method(:to_xml) { elem.to_s }
       end
     end
   end

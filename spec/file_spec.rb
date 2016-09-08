@@ -23,15 +23,20 @@ describe File do
 
     it 'returns array of values found with the given xpath expression' do
       file.xpath('/a/b/text()').should eq ['Hello World']
-      file.xpath('/a/b/@c').first.should match /c=('d'|"d")/
+      file.xpath('/a/b/@c').first.should eq 'd'
     end
 
     specify 'return values are Strings' do
       file.xpath('/a/b').should all(be_a(String))
     end
 
-    it 'attaches #value method to attribute results' do
-      file.xpath('/a/b/@c').first.value.should eq 'd'
+    specify 'attribute return values have #attr_name method' do
+      file.xpath('/a/b/@c').first.attr_name.should eq 'c'
+    end
+
+    specify 'return values have #to_xml method' do
+      file.xpath('/a/b').first.to_xml.should eq "<b c='d'>Hello World</b>"
+      file.xpath('/a/b/@c').first.to_xml.should eq "c='d'"
     end
   end
 end
