@@ -27,9 +27,8 @@ require 'flagship'
 "a".in? ["a","b","c"]   # => true
 "a.txt".in_files? ["./a.txt", "./b.txt", "./c.txt"]   # => true
 
-foo = 'foo'
-with(foo) do
-  nil
+with('foo') do |foo|
+  foobar = "#{foo}bar?" # => 'foobar?' 
 end                     # => 'foo'
 
 File.open('data.xml') do |file|
