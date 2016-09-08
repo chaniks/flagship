@@ -26,6 +26,11 @@ require 'flagship'
 [1,2,3,4,5].unique?     # => true
 "a".in? ["a","b","c"]   # => true
 "a.txt".in_files? ["./a.txt", "./b.txt", "./c.txt"]   # => true
+
+foo = 'foo'
+with(foo) do
+  nil
+end                     # => 'foo'
 ```
 
 ## Development

@@ -24,4 +24,8 @@ describe Flagship do
   it 'defines String#in_files?' do
     "a".should respond_to(:in_files?)
   end
+
+  it 'defines #with as DSL' do
+    self.should respond_to(:with)
+  end
 end
